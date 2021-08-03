@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
@@ -62,6 +62,12 @@ namespace MarsRovers
                 rover.X > _grid.Bound.X ||
                 rover.Y < _grid.Origin.Y ||
                 rover.Y > _grid.Bound.Y;
+        }
+
+        public static bool IsInvalidTurnMoveInstructions(string instructions)
+        {
+            Regex pattern = new(@"^[LMR]+$");
+            return !pattern.IsMatch(instructions);
         }
     }
 }
