@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace MarsRovers
 {
@@ -11,10 +11,17 @@ namespace MarsRovers
             Console.WriteLine("******** Welcome to the Mars Rover app! ********");
             Console.WriteLine(new string('*', 48));
             Console.WriteLine(new string('*', 48));
+            Console.WriteLine("\nHere are some ground rules to start of.");
+            Console.WriteLine("* The GRID input is: X Y, for example: 5 5");
+            Console.WriteLine("* The GRID is limited to 255 x 255 by design");
+            Console.WriteLine("* The ROVER input is: X Y Z, for example: 1 2 N");
+            Console.WriteLine("* Heading values are limited to N, E, S, W");
+            Console.WriteLine("* Move values are limited to L, M, R");
 
             Console.WriteLine("\n\nCool, now please type the grid bounds.");
 
             var grid = InitializeGrid();
+            var navigation = new RoverNavigation(grid);
 
             Console.WriteLine("\nOk, now you will set some rovers.");
 
@@ -25,8 +32,24 @@ namespace MarsRovers
                 var rover = InitializeRoverPosition();
                 var instructions = InitializeRoverInstructions();
 
+                try
+                {
+                    navigation.AddRover(rover, instructions);
+                }
+                catch (RoverOutOfRangeException exception)
+                {
+                    Console.WriteLine(exception.Message);
+                }
+
                 Console.Write("\nDo you wish to add another rover? Y or N: ");
                 if (Console.ReadLine() == "N") addRover = false;
+            }
+
+            Console.WriteLine("\n\nHere is the Mars Rover output!");
+
+            foreach (var roverPosition in navigation.RoverPositions())
+            {
+                Console.WriteLine(roverPosition);
             }
         }
 
