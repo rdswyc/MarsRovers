@@ -1,4 +1,4 @@
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace MarsRovers
 {
@@ -15,6 +15,26 @@ namespace MarsRovers
         public override string ToString()
         {
             return $"{Bound.X} {Bound.Y}";
+        }
+
+        public static bool TryParse(string s, out Grid result)
+        {
+            Regex pattern = new(@"^(\d)+ (\d)+$");
+
+            if (pattern.IsMatch(s))
+            {
+                var bounds = s.Split(' ');
+
+                if (byte.TryParse(bounds[0], out byte leftBound) &&
+                    byte.TryParse(bounds[1], out byte rightBound))
+                {
+                    result = new Grid(leftBound, rightBound);
+                    return true;
+                }
+            }
+
+            result = null;
+            return false;
         }
     }
 }
