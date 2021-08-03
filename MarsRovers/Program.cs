@@ -4,6 +4,13 @@ namespace MarsRovers
 {
     class Program
     {
+        /// <summary>
+        /// The main entry point of the console app.
+        /// It will display a header and start asking for user input, and the handles the program logic.
+        /// There is an addRover flag, followed by a while loop to allow for multiple rovers to be added based on user input.
+        /// It will handle any out of range exception and output the messages to the console.
+        /// Finally, it should output the list of rover positions.
+        /// </summary>
         static void Main(string[] args)
         {
             Console.WriteLine(new string('*', 48));
@@ -53,6 +60,11 @@ namespace MarsRovers
             }
         }
 
+        /// <summary>
+        /// Helper function to initialize the grid based on user input.
+        /// If the entry is invalid, it will request for a retry.
+        /// </summary>
+        /// <returns>A new grid instance.</returns>
         private static Grid InitializeGrid()
         {
             Console.Write("Type the grid bounds, and then press Enter: ");
@@ -68,6 +80,11 @@ namespace MarsRovers
             return grid;
         }
 
+        /// <summary>
+        /// Helper function to collect the rover instructions based on user input.
+        /// If the entry is invalid, it will request for a retry.
+        /// </summary>
+        /// <returns>The valid instruction string.</returns>
         private static string InitializeRoverInstructions()
         {
             Console.Write("Type the rover instructions, and then press Enter: ");
@@ -82,6 +99,11 @@ namespace MarsRovers
             return input;
         }
 
+        /// <summary>
+        /// Helper function to initialize a rover based on user input.
+        /// If the entry is invalid, it will request for a retry.
+        /// </summary>
+        /// <returns>A new rover instance.</returns>
         private static Rover InitializeRoverPosition()
         {
             Console.Write("Type the rover postion, and then press Enter: ");
