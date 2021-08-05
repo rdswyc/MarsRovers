@@ -7,7 +7,8 @@ namespace MarsRovers
     /// <summary>
     /// Main application logic separated from the Main Program flow.
     /// It has a private Grid instance and a queue of the rovers.
-    /// The choice for a queue is to be able to enqueue rovers sequentially, and discard them later after output (FIFO).
+    /// The choice for a queue is to be able to enqueue rovers sequentially, and discard them later after output
+    /// in a First-In-First-Out approach.
     /// </summary>
     public class RoverNavigation
     {

@@ -1,8 +1,8 @@
 ﻿namespace MarsRovers
 {
     /// <summary>
-    /// The basic coordinate base class with X and Y pair.
-    /// This class is not abstract due to direct instantiation by other classes.
+    /// The coordinate base class with the X and Y pair.
+    /// By design, this class is not abstract due to direct instantiation by other classes.
     /// It is also not a struct to allow inheritance.
     /// </summary>
     public class Coordinate

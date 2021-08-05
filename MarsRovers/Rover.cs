@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 namespace MarsRovers
 {
     /// <summary>
-    /// An representation of each rover. It inherits coordinates and adds a heading property.
+    /// A representation of each rover. It inherits coordinates and adds a heading property.
     /// It also has a move method based on the instructions available.
     /// </summary>
     public class Rover : Coordinate

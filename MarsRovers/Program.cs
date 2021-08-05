@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace MarsRovers
 {
@@ -6,10 +6,10 @@ namespace MarsRovers
     {
         /// <summary>
         /// The main entry point of the console app.
-        /// It will display a header and start asking for user input, and the handles the program logic.
+        /// It will display a header, start asking for user input, and then handle the program logic.
         /// There is an addRover flag, followed by a while loop to allow for multiple rovers to be added based on user input.
         /// It will handle any out of range exception and output the messages to the console.
-        /// Finally, it should output the list of rover positions.
+        /// Finally, it should output the list of rover positions and wait for the user to respond before closing.
         /// </summary>
         static void Main(string[] args)
         {
