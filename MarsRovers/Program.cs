@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace MarsRovers
 {
@@ -58,6 +58,9 @@ namespace MarsRovers
             {
                 Console.WriteLine(roverPosition);
             }
+
+            Console.Write("\n\nThat's it! Press any key to close the app...");
+            Console.ReadKey();
         }
 
         /// <summary>
